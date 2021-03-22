@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Mobile {
+        constructor(name,pin,drafted,inbox,sent) {
+            this.name=name;
+            this.pin=parseInt(pin);
+            this.drafted=drafted;
+            this.inbox=inbox;
+            this.sent=sent;
+        }
+        checkOn(){
+
+            if(this.pin>0){
+                alert("máy đang bật còn "+this.pin+"% pin");
+                this.charger=function (){
+                    this.pin-=1;
+                }
+                this.texting=function (){
+                    this.pin-=1;
+                }
+                this.receiveMessages=function (){
+                    this.pin-=1;
+                }
+                this.sentMessages=function (){
+                    this.pin-=1;
+                    this.to=prompt(" nhập tên điện thoại muốn gửi: ")
+                    this.text=prompt(" nhập nội dung gửi: ")
+
+                }
+                this.viewInbox=function (form, text){
+                    this.pin-=1;
+                    this.form=form;
+                    this.text=text;
+                }
+                this.viewSent=function (){
+                    this.pin-=1;
+                }
+                this.turnOff=function (){
+                    this.pin-=1;
+                }
+                this.turnOn=function (){
+                    this.pin-=1;
+                }
+            }
+            if(this.pin<=0) {
+                return alert("máy đã hết pin !!!");
+            }
+        }
+
+        // turnOn(){
+        //
+        // }
+        // turnOff(){
+        //
+        // }
+        // charger(){
+        //
+        // }
+        // texting(){
+        //
+        // }
+        // receiveMessages(){
+        //
+        // }
+        // sentMessages(){
+        //
+        // }
+        // viewInbox(){
+        //     console.log(this.receiveMessages())
+        // }
+        // viewSent(){
+        //     console.log(this.sentMessages())
+        // }
+    }
+    let iphone=new Mobile("iphone",90,100,90,80);
+    iphone.checkOn()
+
+</script>
